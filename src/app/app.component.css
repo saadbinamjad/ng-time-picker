@@ -1,0 +1,40 @@
+container{
+    position: inherit;
+    margin: auto;
+    display: inline-block;
+    width: 100%;
+    background-size: contain;
+}
+
+.hour span {
+  font: 26px Monaco, MonoSpace;
+  height: 200px;
+  position: absolute;
+  width: 20px;
+  left: 10em;
+  top: 1em;
+  transform-origin: bottom center;
+  cursor: pointer;
+  /*border-right: 1px solid red;*/
+}
+
+.minute span {
+  font: 10px Monaco, MonoSpace;
+  height: 160px;
+  position: absolute;
+  width: 15px;
+  left: 26.5em;
+  top: 6.5em;
+  transform-origin: bottom center;
+  cursor: pointer;
+  /*border-right: 1px solid red;*/
+}
+
+.hour span:hover { 
+    border-left: 4px solid black;
+}
+
+.minute span:hover { 
+    border-left: 1px solid black;
+}
+

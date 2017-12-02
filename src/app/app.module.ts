@@ -3,14 +3,15 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-
+import { TimePickerModule } from './time-picker/time-picker.module';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    TimePickerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
