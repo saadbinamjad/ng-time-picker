@@ -1,27 +1,87 @@
-# NgTimePicker
+# ng-time-picker
+
+**Analog Time Picker based on Angular 2+**
+
+## Description
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.0.
+It's my tiny attempt to publish my second node package. I may not continue to support this package. But lets see!
 
-## Development server
+## Installation
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+To install this module to an external project, follow the procedure:
 
-## Code scaffolding
+1. __npm install ng-time-picker --save__
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+2. Add __TimePickerModule__ import to your __@NgModule__ like example below. 
+  
+    ```ts
+    import { BrowserModule } from '@angular/platform-browser';
+    import { NgModule } from '@angular/core';
 
-## Build
+    import { AppComponent } from './app.component';
+    import { TimePickerModule } from 'ng-time-picker';
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
-## Running unit tests
+    @NgModule({
+    declarations: [
+        AppComponent
+    ],
+    imports: [
+        BrowserModule,
+        TimePickerModule
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
+    })
+    export class AppModule { }
+    ```
+## Usage
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. You just need to listen to the event emitter of the component.
+    
+    ```html
+    <ng-time-picker (notify)="onNotify($event)"></ng-time-picker>
+    ```
 
-## Running end-to-end tests
+2.  Use the function in your component:
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+    ```ts
+    import { Component } from '@angular/core';
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+    @Component({
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css']
+    })
+    export class AppComponent {
+
+    onNotify($event) { 
+      console.log($event);
+    }
+
+    }
+    ```
+  
+## Demo
+Online demo is [here](https://saadbinamjad.github.io/ng-time-picker/).
+
+## Github: 
+https://github.com/saadbinamjad/ng-time-picker
+
+## Package: 
+https://www.npmjs.com/package/ng-time-picker
+
+## License
+* License: MIT
+
+## Author
+* Author: saadbinamjad
+
+## Keywords
+* Angular
+* Angular2
+* Angular 2+
+* Time Picker
+
