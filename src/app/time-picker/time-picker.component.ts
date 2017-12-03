@@ -14,9 +14,10 @@ export class TimePickerComponent implements OnInit {
   minutes = [];
 
   selectedTime: any = 'AM';
-  selectedHour: any = null;
-  selectedMinute: any = null;
+  selectedHour: any = '0';
+  selectedMinute: any = '00';
   clicked: boolean = false;
+  open: boolean = false;
 
   ngOnInit() {
     this.initHours();
@@ -49,6 +50,9 @@ export class TimePickerComponent implements OnInit {
     for (let i = 1; i < 61; i++) {
       let temp = [];
       temp['minute'] = i;
+      if (temp['minute'] % 5) {
+        temp['hide'] = i;
+      }
       temp['degree'] = degree + 'deg';
       degree = degree + 6;
       this.minutes.push(temp);
@@ -62,7 +66,7 @@ export class TimePickerComponent implements OnInit {
 
   setMinute(min) {
     this.clicked = true;
-    this.selectedMinute = min;
+    this.selectedMinute = this.pad(min, 2);
     this.emitValues();
   }
 
@@ -73,7 +77,6 @@ export class TimePickerComponent implements OnInit {
       this.selectedTime = 'AM';
     }
 
-
     this.emitValues();
   }
 
@@ -83,5 +86,15 @@ export class TimePickerComponent implements OnInit {
       'minute': this.selectedMinute,
       'time': this.selectedTime
     });
+  }
+
+  openClock() {
+    this.open = !this.open;
+  }
+
+  pad(num, size) {
+    let s = num + "";
+    while (s.length < size) s = "0" + s;
+    return s;
   }
 }

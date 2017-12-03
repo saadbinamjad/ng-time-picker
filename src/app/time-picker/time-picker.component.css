@@ -1,29 +1,29 @@
-container{
+.container{
     position: relative;
     display: inline-block;
-    width: 100%;
-    
+    width: inherit;
 }
 
 .hour span {
-  font: 26px Monaco, MonoSpace;
-  height: 200px;
+  font: 16px Monaco, MonoSpace;
+  height: 75px;
   position: absolute;
-  width: 20px;
-  left: 10em;
-  top: 1em;
+  width: 15px;
+  left: 9.5em;
+  top: 4.8em;
   transform-origin: bottom center;
   cursor: pointer;
+  z-index: 1000;
   /*border-right: 1px solid red;*/
 }
 
 .minute span {
   font: 10px Monaco, MonoSpace;
-  height: 160px;
+  height: 100px;
   position: absolute;
-  width: 15px;
-  left: 26.5em;
-  top: 6.5em;
+  width: 20px;
+  left: 15.2em;
+  top: 5.5em;
   transform-origin: bottom center;
   cursor: pointer;
   /*border-right: 1px solid red;*/
@@ -36,17 +36,26 @@ container{
 .minute span:hover { 
     border-left: 1px solid black;
 }
-
+.input-box{
+  font-size: relative; 
+  width: 50%;
+}
+.icon-clock {
+font-size: 100%; 
+width: 50%;
+}
 
 .switch {
   position: relative;
   display: inline-block;
-  width: 60px;
-  height: 34px;
+  width: 45px;
+  height: 16px;
 }
 
+/* Hide default HTML checkbox */
 .switch input {display:none;}
 
+/* The slider */
 .slider {
   position: absolute;
   cursor: pointer;
@@ -62,10 +71,10 @@ container{
 .slider:before {
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
+  height: 13px;
+  width: 13px;
+  left: 2px;
+  bottom: 2px;
   background-color: white;
   -webkit-transition: .4s;
   transition: .4s;
@@ -83,4 +92,19 @@ input:checked + .slider:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.am-pm-box{
+  position: relative;
+  top: 1em; 
+  width: 100%;
 }
