@@ -1,7 +1,8 @@
-.container{
-    position: relative;
-    display: inline-block;
-    width: inherit;
+.wrapper{
+ position: inherit;
+ background-color: #eff0f1;
+ width: 90%;
+ height: 16em;
 }
 
 .hour span {
@@ -38,11 +39,13 @@
 }
 .input-box{
   font-size: relative; 
-  width: 50%;
+  width: 90%;
 }
-.icon-clock {
+
+.icon-clock-reset {
+position: absolute;
+left: 90%;
 font-size: 100%; 
-width: 50%;
 }
 
 .switch {

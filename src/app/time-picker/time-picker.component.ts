@@ -92,9 +92,20 @@ export class TimePickerComponent implements OnInit {
     this.open = !this.open;
   }
 
+  resetClock() {
+    this.selectedTime = 'AM';
+    this.selectedHour = '0';
+    this.selectedMinute = '00';
+    this.emitValues();
+    this.open = !this.open;
+  }
+
   pad(num, size) {
     let s = num + "";
     while (s.length < size) s = "0" + s;
+    if (s == '60') {
+      return '00';
+    }
     return s;
   }
 }

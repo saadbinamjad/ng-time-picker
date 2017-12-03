@@ -1,19 +1,22 @@
+
 <div>
-  <input class="input-box" (click)="openClock()" readonly type="text" placeholder="H: MM" [value]="selectedHour + ':' + selectedMinute"
+  <input class="input-box" (click)="openClock()" readonly type="text" placeholder="H: MM" [value]="selectedHour + ':' + selectedMinute + ' ' +selectedTime"
   />
   <span (click)="openClock()" class="icon-clock">
-    <i class="fa fa-clock-o" aria-hidden="true"></i
-  ></span>
-</div>
+    <i *ngIf="open == false" class="fa fa-clock-o" aria-hidden="true"></i>
+    <i *ngIf="open == true" class="fa fa-times" aria-hidden="true"></i>
+  </span>
+  </div>
 
-<div *ngIf="open === true" class="container">
+<div *ngIf="open === true" class="wrapper">
+  <span style="cursor: pointer; top: 3px; font: 10px Monaco, MonoSpace"(click)="resetClock()">Reset Clock</span>
   <div class="am-pm-box">
-    <span>AM</span>
+    <span style="font-size: 50%;">AM</span>
     <label class="switch">
   <input type="checkbox">
   <span (click)="setTime('PM')" class="slider round"></span>
   </label>
-    <span>PM</span>
+    <span style="font-size: 50%">PM</span>
   </div>
   <h1 class="hour">
     <span *ngFor="let hour of hours; let i =index" [ngStyle]="{'transform': 'rotate(' + hour.degree + ')'}" (click)="setHour(hour.hour)">{{ hour.hour }}
