@@ -1,6 +1,7 @@
 .wrapper{
  position: inherit;
- background-color: #eff0f1;
+ background-color: white;
+ box-shadow: 3px 3px 1px grey;
  width: 90%;
  height: 16em;
 }
@@ -31,15 +32,19 @@
 }
 
 .hour span:hover { 
-    border-left: 4px solid black;
+    border-left: 4px solid #2196F3;
 }
 
 .minute span:hover { 
-    border-left: 1px solid black;
+    border-left: 1px solid #2196F3;
 }
 .input-box{
   font-size: relative; 
   width: 90%;
+}
+
+.icon-clock {
+cursor: pointer;
 }
 
 .icon-clock-reset {
