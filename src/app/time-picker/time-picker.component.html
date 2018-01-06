@@ -21,7 +21,7 @@
   </div>
   <h1 class="hour">
     <span *ngFor="let hour of hours; let i =index" 
-      [style.border]="hourActiveState == true && selectedHour == hour.hour ? '2px solid #2196F3' : null"
+      [style.border]="hourActiveState == true && selectedHour == hour.hour ? '2px solid grey' : null"
       [ngStyle]="{'transform': 'rotate(' + hour.degree + ')'}" 
       (click)="setHour(hour.hour)">
       {{ hour.hour }}
@@ -29,7 +29,7 @@
   </h1>
   <h1 class="minute">
     <span *ngFor="let minute of minutes; let i =index" 
-      [style.border]="minuteActiveState == true  && selectedMinute == minute.minute || (selectedMinute == 00 && minute.minute == 60) ? '1px solid #2196F3' : null"
+      [style.border]="minuteActiveState == true  && selectedMinute == minute.minute || (selectedMinute == 00 && minute.minute == 60) ? '1px solid grey' : null"
       [ngStyle]="{'transform': 'rotate(' + minute.degree + ')'}" (click)="setMinute(minute.minute)">
       <ng-container *ngIf="!minute.hide">
         {{ minute.minute}}
